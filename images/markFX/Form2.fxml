@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="289.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.porourke.examples.images.javaFX.Controller">
+   <children>
+      <VBox maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="104.0" text="Brush Size" />
+            <Slider id="brushSizeSlider" fx:id="brushSizeSlider" blockIncrement="1.0" majorTickUnit="5.0" max="20.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0" />
+            <CheckBox id="seeMarkingsCheckbox" fx:id="seeMarkingsCheckBox" mnemonicParsing="false" onAction="#seeMarkingsCheckBoxChanged" selected="true" text="See Markings" />
+            <CheckBox id="markUnmarkCheckBox" fx:id="markUnmarkCheckBox" mnemonicParsing="false" selected="true" text="Mark/Unmark" />
+            <ChoiceBox fx:id="layersChoiceBox" prefWidth="150.0" />
+            <TextField id="MarkValueTextBox" fx:id="layerTextBox" />
+            <Button id="button" fx:id="button" onAction="#actionFired" prefHeight="25.0" prefWidth="112.0" text="Add" />
+            <Button fx:id="removeMarkingButton" mnemonicParsing="false" onAction="#removeMarkingButtonAction" prefHeight="25.0" prefWidth="128.0" text="Remove" />
+            <Label text="Zoom" />
+            <Slider fx:id="zoomSlider" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+            <CheckBox fx:id="panCheckBox" mnemonicParsing="false" onAction="#panCheckBoxAction" text="Pan" />
+         </children>
+      </VBox>
+      <VBox prefHeight="199.0" prefWidth="256.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="loadImageMenuItem" mnemonicParsing="false" onAction="#loadImageAction" text="Load Image" />
+                        <MenuItem mnemonicParsing="false" onAction="#loadMarkingsAction" text="Load Markings" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveMarkingsAction" text="Save Markings" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ImageView fx:id="imageView" fitHeight="184.0" fitWidth="247.0" onMouseDragged="#imageView_MouseDragged" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+   </children>
+
+</HBox>
